@@ -123,3 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+import os
+if 'WEBSITE_HOSTNAME' in os.environ: # Running on Azure
+    from .azure import *
